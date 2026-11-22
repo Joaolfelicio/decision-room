@@ -1,0 +1,6 @@
+node_modules
+dist
+.netlify
+.local-rooms.json
+.env
+.env.*
