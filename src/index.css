@@ -1,31 +1,61 @@
 @import "tailwindcss";
 
+@theme {
+  --color-canvas: #FAF8F5;
+  --color-surface: #FFFFFF;
+  --color-surface-subtle: #F3EFE8;
+  --color-border: #E8E4DC;
+  --color-ink: #141413;
+  --color-ink-muted: #6B6860;
+  --color-accent: #FF5A36;
+  --color-accent-hover: #E84825;
+  --color-accent-soft: #FFF0EC;
+  --color-pick: #16A34A;
+  --color-pick-soft: #DCFCE7;
+  --color-pass: #DC2626;
+  --color-pass-soft: #FEE2E2;
+  --color-tie: #D97706;
+  --color-tie-soft: #FEF3C7;
+}
+
 @layer base {
   body {
-    font-family: "Inter", system-ui, -apple-system, sans-serif;
-    background-color: #070a14;
-    color: #f8fafc;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    background-color: #FAF8F5;
+    color: #141413;
     overflow-x: hidden;
   }
 
   h1, h2, h3, .font-display {
-    font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    letter-spacing: -0.025em;
   }
 
   .font-mono {
     font-family: "JetBrains Mono", monospace;
+    font-variant-numeric: tabular-nums;
   }
 }
 
-@keyframes floatPulse {
+@keyframes livePulse {
   0%, 100% {
-    transform: translateY(0px);
+    opacity: 1;
+    transform: scale(1);
   }
   50% {
-    transform: translateY(-4px);
+    opacity: 0.45;
+    transform: scale(0.85);
   }
 }
 
-.animate-float {
-  animation: floatPulse 3s ease-in-out infinite;
+.animate-live-dot {
+  animation: livePulse 1.6s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 150ms !important;
+  }
 }

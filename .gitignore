@@ -1,6 +1,10 @@
 node_modules
 dist
 .netlify
+.local-blobs
 .local-rooms.json
 .env
 .env.*
+*.log
+.DS_Store
+.verify-artifacts
