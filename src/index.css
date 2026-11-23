@@ -52,6 +52,18 @@
   animation: livePulse 1.6s infinite;
 }
 
+/* Hide Netlify Free Tier HUD / Powered by Netlify badge */
+#nl-badge-frame,
+iframe[title="Powered by Netlify"],
+script[src*="/.netlify/scripts/hud"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
